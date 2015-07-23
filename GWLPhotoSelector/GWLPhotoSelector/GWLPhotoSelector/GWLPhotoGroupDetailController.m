@@ -111,7 +111,9 @@ static int const kROWPHOTO = 4;
             [selfVc.imageArray addObject:originalImage];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            selfVc.block(selfVc.imageArray);
+            if (selfVc.block) {
+                selfVc.block(selfVc.imageArray);
+            }
             selfVc.selectedPhotos = nil;
             selfVc.imageArray = nil;
         });
