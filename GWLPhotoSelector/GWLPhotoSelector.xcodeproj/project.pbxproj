@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85FCE9B41B60BE88004D2B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9B31B60BE88004D2B20 /* main.m */; };
+		85FCE9B71B60BE88004D2B20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9B61B60BE88004D2B20 /* AppDelegate.m */; };
+		85FCE9CE1B60BE89004D2B20 /* GWLPhotoSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9CD1B60BE89004D2B20 /* GWLPhotoSelectorTests.m */; };
+		85FCE9DE1B60BF19004D2B20 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9DC1B60BF19004D2B20 /* DemoViewController.m */; };
+		85FCE9E61B60C5DD004D2B20 /* GWLPhotoLibrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */; };
+		85FCE9EA1B60C6D6004D2B20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FCE9E91B60C6D6004D2B20 /* Default-568h@2x.png */; };
+		85FCE9ED1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */; };
+		85FCE9F01B60CBEB004D2B20 /* GWLPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */; };
+		85FCE9F31B60CF06004D2B20 /* GWLPhotoALAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */; };
+		85FCE9F61B60D220004D2B20 /* GWLPhotoGroupDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9F51B60D220004D2B20 /* GWLPhotoGroupDetailController.m */; };
+		85FCE9F91B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85FCE9C81B60BE89004D2B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85FCE9A61B60BE88004D2B20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85FCE9AD1B60BE88004D2B20;
+			remoteInfo = GWLPhotoSelector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85FCE9AE1B60BE88004D2B20 /* GWLPhotoSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWLPhotoSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85FCE9B21B60BE88004D2B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85FCE9B31B60BE88004D2B20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		85FCE9B51B60BE88004D2B20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		85FCE9B61B60BE88004D2B20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		85FCE9C71B60BE89004D2B20 /* GWLPhotoSelectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GWLPhotoSelectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85FCE9CC1B60BE89004D2B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85FCE9CD1B60BE89004D2B20 /* GWLPhotoSelectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoSelectorTests.m; sourceTree = "<group>"; };
+		85FCE9DB1B60BF19004D2B20 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		85FCE9DC1B60BF19004D2B20 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		85FCE9E41B60C5DD004D2B20 /* GWLPhotoLibrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoLibrayController.h; sourceTree = "<group>"; };
+		85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoLibrayController.m; sourceTree = "<group>"; };
+		85FCE9E91B60C6D6004D2B20 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		85FCE9EB1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroupTableViewController.h; sourceTree = "<group>"; };
+		85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroupTableViewController.m; sourceTree = "<group>"; };
+		85FCE9EE1B60CBEB004D2B20 /* GWLPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroup.h; sourceTree = "<group>"; };
+		85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroup.m; sourceTree = "<group>"; };
+		85FCE9F11B60CF06004D2B20 /* GWLPhotoALAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoALAssets.h; sourceTree = "<group>"; };
+		85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoALAssets.m; sourceTree = "<group>"; };
+		85FCE9F41B60D220004D2B20 /* GWLPhotoGroupDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroupDetailController.h; sourceTree = "<group>"; };
+		85FCE9F51B60D220004D2B20 /* GWLPhotoGroupDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroupDetailController.m; sourceTree = "<group>"; };
+		85FCE9F71B60DA07004D2B20 /* GWLPhotoSelectorHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWLPhotoSelectorHeader.h; sourceTree = "<group>"; };
+		85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GWLPhotoSelector_sel@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85FCE9AB1B60BE88004D2B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85FCE9C41B60BE89004D2B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85FCE9A51B60BE88004D2B20 = {
+			isa = PBXGroup;
+			children = (
+				85FCE9B01B60BE88004D2B20 /* GWLPhotoSelector */,
+				85FCE9CA1B60BE89004D2B20 /* GWLPhotoSelectorTests */,
+				85FCE9AF1B60BE88004D2B20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85FCE9AF1B60BE88004D2B20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85FCE9AE1B60BE88004D2B20 /* GWLPhotoSelector.app */,
+				85FCE9C71B60BE89004D2B20 /* GWLPhotoSelectorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85FCE9B01B60BE88004D2B20 /* GWLPhotoSelector */ = {
+			isa = PBXGroup;
+			children = (
+				85FCE9D71B60BEB3004D2B20 /* GWLPhotoSelector */,
+				85FCE9B51B60BE88004D2B20 /* AppDelegate.h */,
+				85FCE9B61B60BE88004D2B20 /* AppDelegate.m */,
+				85FCE9B11B60BE88004D2B20 /* Supporting Files */,
+				85FCE9DB1B60BF19004D2B20 /* DemoViewController.h */,
+				85FCE9DC1B60BF19004D2B20 /* DemoViewController.m */,
+			);
+			path = GWLPhotoSelector;
+			sourceTree = "<group>";
+		};
+		85FCE9B11B60BE88004D2B20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85FCE9E91B60C6D6004D2B20 /* Default-568h@2x.png */,
+				85FCE9B21B60BE88004D2B20 /* Info.plist */,
+				85FCE9B31B60BE88004D2B20 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85FCE9CA1B60BE89004D2B20 /* GWLPhotoSelectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				85FCE9CD1B60BE89004D2B20 /* GWLPhotoSelectorTests.m */,
+				85FCE9CB1B60BE89004D2B20 /* Supporting Files */,
+			);
+			path = GWLPhotoSelectorTests;
+			sourceTree = "<group>";
+		};
+		85FCE9CB1B60BE89004D2B20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85FCE9CC1B60BE89004D2B20 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85FCE9D71B60BEB3004D2B20 /* GWLPhotoSelector */ = {
+			isa = PBXGroup;
+			children = (
+				85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */,
+				85FCE9F71B60DA07004D2B20 /* GWLPhotoSelectorHeader.h */,
+				85FCE9E41B60C5DD004D2B20 /* GWLPhotoLibrayController.h */,
+				85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */,
+				85FCE9EE1B60CBEB004D2B20 /* GWLPhotoGroup.h */,
+				85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */,
+				85FCE9F11B60CF06004D2B20 /* GWLPhotoALAssets.h */,
+				85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */,
+				85FCE9EB1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.h */,
+				85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */,
+				85FCE9F41B60D220004D2B20 /* GWLPhotoGroupDetailController.h */,
+				85FCE9F51B60D220004D2B20 /* GWLPhotoGroupDetailController.m */,
+			);
+			path = GWLPhotoSelector;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85FCE9AD1B60BE88004D2B20 /* GWLPhotoSelector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85FCE9D11B60BE89004D2B20 /* Build configuration list for PBXNativeTarget "GWLPhotoSelector" */;
+			buildPhases = (
+				85FCE9AA1B60BE88004D2B20 /* Sources */,
+				85FCE9AB1B60BE88004D2B20 /* Frameworks */,
+				85FCE9AC1B60BE88004D2B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GWLPhotoSelector;
+			productName = GWLPhotoSelector;
+			productReference = 85FCE9AE1B60BE88004D2B20 /* GWLPhotoSelector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85FCE9C61B60BE89004D2B20 /* GWLPhotoSelectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85FCE9D41B60BE89004D2B20 /* Build configuration list for PBXNativeTarget "GWLPhotoSelectorTests" */;
+			buildPhases = (
+				85FCE9C31B60BE89004D2B20 /* Sources */,
+				85FCE9C41B60BE89004D2B20 /* Frameworks */,
+				85FCE9C51B60BE89004D2B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85FCE9C91B60BE89004D2B20 /* PBXTargetDependency */,
+			);
+			name = GWLPhotoSelectorTests;
+			productName = GWLPhotoSelectorTests;
+			productReference = 85FCE9C71B60BE89004D2B20 /* GWLPhotoSelectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85FCE9A61B60BE88004D2B20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = GWL;
+				TargetAttributes = {
+					85FCE9AD1B60BE88004D2B20 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					85FCE9C61B60BE89004D2B20 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 85FCE9AD1B60BE88004D2B20;
+					};
+				};
+			};
+			buildConfigurationList = 85FCE9A91B60BE88004D2B20 /* Build configuration list for PBXProject "GWLPhotoSelector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85FCE9A51B60BE88004D2B20;
+			productRefGroup = 85FCE9AF1B60BE88004D2B20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85FCE9AD1B60BE88004D2B20 /* GWLPhotoSelector */,
+				85FCE9C61B60BE89004D2B20 /* GWLPhotoSelectorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85FCE9AC1B60BE88004D2B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FCE9EA1B60C6D6004D2B20 /* Default-568h@2x.png in Resources */,
+				85FCE9F91B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85FCE9C51B60BE89004D2B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85FCE9AA1B60BE88004D2B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FCE9E61B60C5DD004D2B20 /* GWLPhotoLibrayController.m in Sources */,
+				85FCE9F31B60CF06004D2B20 /* GWLPhotoALAssets.m in Sources */,
+				85FCE9F61B60D220004D2B20 /* GWLPhotoGroupDetailController.m in Sources */,
+				85FCE9DE1B60BF19004D2B20 /* DemoViewController.m in Sources */,
+				85FCE9B71B60BE88004D2B20 /* AppDelegate.m in Sources */,
+				85FCE9B41B60BE88004D2B20 /* main.m in Sources */,
+				85FCE9ED1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m in Sources */,
+				85FCE9F01B60CBEB004D2B20 /* GWLPhotoGroup.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85FCE9C31B60BE89004D2B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FCE9CE1B60BE89004D2B20 /* GWLPhotoSelectorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85FCE9C91B60BE89004D2B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85FCE9AD1B60BE88004D2B20 /* GWLPhotoSelector */;
+			targetProxy = 85FCE9C81B60BE89004D2B20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		85FCE9CF1B60BE89004D2B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		85FCE9D01B60BE89004D2B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85FCE9D21B60BE89004D2B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GWLPhotoSelector/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		85FCE9D31B60BE89004D2B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GWLPhotoSelector/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		85FCE9D51B60BE89004D2B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GWLPhotoSelectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GWLPhotoSelector.app/GWLPhotoSelector";
+			};
+			name = Debug;
+		};
+		85FCE9D61B60BE89004D2B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GWLPhotoSelectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GWLPhotoSelector.app/GWLPhotoSelector";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85FCE9A91B60BE88004D2B20 /* Build configuration list for PBXProject "GWLPhotoSelector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85FCE9CF1B60BE89004D2B20 /* Debug */,
+				85FCE9D01B60BE89004D2B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85FCE9D11B60BE89004D2B20 /* Build configuration list for PBXNativeTarget "GWLPhotoSelector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85FCE9D21B60BE89004D2B20 /* Debug */,
+				85FCE9D31B60BE89004D2B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85FCE9D41B60BE89004D2B20 /* Build configuration list for PBXNativeTarget "GWLPhotoSelectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85FCE9D51B60BE89004D2B20 /* Debug */,
+				85FCE9D61B60BE89004D2B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85FCE9A61B60BE88004D2B20 /* Project object */;
+}
