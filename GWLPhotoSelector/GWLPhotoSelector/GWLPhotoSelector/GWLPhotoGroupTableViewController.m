@@ -64,8 +64,7 @@
     _infoLabel.frame = CGRectMake(CGRectGetMaxX(_iconView.frame) + padding, marginTB, CGRectGetWidth(self.frame) - CGRectGetMaxX(_iconView.frame) - marginLR, controlWH);
 }
 
-- (void)setPhotoGroup:(GWLPhotoGroup *)photoGroup
-{
+- (void)setPhotoGroup:(GWLPhotoGroup *)photoGroup {
     _photoGroup = photoGroup;
     [self.iconView setImage:photoGroup.groupIcon];
     self.infoLabel.text = [NSString stringWithFormat:@"%@(%zd)",photoGroup.groupName,photoGroup.photoALAssets.count];
@@ -84,7 +83,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"照片";
+    self.title = @"相簿";
     self.tableView.tableFooterView = [[UIView alloc]init];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelBtnDidClick)];
 }
@@ -130,20 +129,29 @@
     GWLPhotoGroup *photoGroup = self.photoGroupArray[indexPath.section];
     if (photoGroup.photoALAssets.count == 0)
         return;
-    self.photoGroupDetailController.photoALAssets = photoGroup.photoALAssets;
-    self.photoGroupDetailController.title = photoGroup.groupName;
-    [self.navigationController pushViewController:self.photoGroupDetailController animated:YES];
+    GWLPhotoGroupDetailController *photoGroupDetailController;
+    if (!self.canMultiAlbumSelect) {
+        for (GWLPhotoGroup *photoGroup in self.photoGroupArray) {
+            for (GWLPhotoALAssets *photoALAssets in photoGroup.photoALAssets) {
+                photoALAssets.selected = NO;
+            }
+        }
+        photoGroupDetailController = [[GWLPhotoGroupDetailController alloc]init];
+        photoGroupDetailController.maxCount = self.maxCount;
+        photoGroupDetailController.block = self.block;
+    }else {
+        if (!_photoGroupDetailController) {
+            _photoGroupDetailController = [[GWLPhotoGroupDetailController alloc]init];
+            _photoGroupDetailController.maxCount = self.maxCount;
+            _photoGroupDetailController.block = self.block;
+        }
+        photoGroupDetailController = _photoGroupDetailController;
+    }
+    photoGroupDetailController.photoALAssets = photoGroup.photoALAssets;
+    [self.navigationController pushViewController:photoGroupDetailController animated:YES];
 }
 
 #pragma mark - getter && setter
-- (GWLPhotoGroupDetailController *)photoGroupDetailController {
-    if (!_photoGroupDetailController) {
-        _photoGroupDetailController = [[GWLPhotoGroupDetailController alloc]init];
-        _photoGroupDetailController.maxCount = self.maxCount;
-    }
-    return _photoGroupDetailController;
-}
-
 - (void)setMaxCount:(NSInteger)maxCount {
     _maxCount = maxCount;
 }
@@ -170,10 +178,6 @@
         _errorMessageView = errorMessageView;
     }
     return _errorMessageView;
-}
-
-- (void)dealloc {
-    NSLog(@"%s -- dealloc",__func__);
 }
 
 @end

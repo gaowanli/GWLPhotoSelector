@@ -57,6 +57,7 @@
         selectedBtn.userInteractionEnabled = NO;
         [selectedBtn setImage:[UIImage imageNamed:@"GWLPhotoSelector_sel"] forState:UIControlStateNormal];
         CGFloat margin = 5;
+        selectedBtn.frame = CGRectMake(0, 0, selectedBtn.currentImage.size.width, selectedBtn.currentImage.size.height);
         CGFloat selectedBtnX = CGRectGetWidth(_iconView.frame) - CGRectGetWidth(selectedBtn.frame) - margin;
         CGFloat selectedBtnY = CGRectGetHeight(_iconView.frame) - CGRectGetHeight(selectedBtn.frame) - margin;
         selectedBtn.frame = CGRectMake(selectedBtnX, selectedBtnY, selectedBtn.currentImage.size.width, selectedBtn.currentImage.size.height);
@@ -97,12 +98,16 @@ static int const kROWPHOTO = 4;
     [self.collectionView registerClass:[GWLPhotoCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupTitle];
+}
+
 - (void)doneBtnClick:(UIBarButtonItem *)doneBarButtonItem {
     doneBarButtonItem.enabled = NO;
     __weak typeof (self) selfVc = self;
     [[[NSOperationQueue alloc]init] addOperationWithBlock:^{
-        for (GWLPhotoALAssets *photoALAsset in self.selectedPhotos)
-        {
+        for (GWLPhotoALAssets *photoALAsset in self.selectedPhotos) {
             ALAsset *sset = photoALAsset.photoALAsset;
             ALAssetRepresentation *assetRepresentation = [sset defaultRepresentation];
             CGFloat imageScale = [assetRepresentation scale];
@@ -113,6 +118,7 @@ static int const kROWPHOTO = 4;
         dispatch_async(dispatch_get_main_queue(), ^{
             if (selfVc.block) {
                 selfVc.block(selfVc.imageArray);
+                [selfVc dismissViewControllerAnimated:YES completion:NULL];
             }
             selfVc.selectedPhotos = nil;
             selfVc.imageArray = nil;
@@ -155,13 +161,17 @@ static int const kROWPHOTO = 4;
         if (self.selectedPhotos.count > self.maxCount) {
             [self.selectedPhotos removeLastObject];
             photoALAsset.selected = NO;
-            NSLog(@"%@",[NSString stringWithFormat:@"本次最多可选择%zd张照片",self.maxCount]);
         }
     }
     else {
         [self.selectedPhotos removeObject:photoALAsset];
     }
+    [self setupTitle];
     [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+}
+
+- (void)setupTitle {
+    self.title = [NSString stringWithFormat:@"%zd / %zd", self.selectedPhotos.count, self.maxCount];
 }
 
 #pragma mark - getter && setter

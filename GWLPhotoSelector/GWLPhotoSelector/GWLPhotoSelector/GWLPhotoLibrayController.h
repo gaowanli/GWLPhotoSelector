@@ -13,7 +13,9 @@
 
 /**最多能选择的照片数量*/
 @property(nonatomic, assign) NSInteger maxCount;
-/**回调*/
-@property (nonatomic, copy) photoSelectorBlock block;
+/**是否可以跨相册选择*/
+@property (nonatomic, assign) BOOL multiAlbumSelect;
+
++ (instancetype)photoLibrayControllerWithBlock:(photoSelectorBlock) block;
 
 @end

@@ -12,6 +12,7 @@
 @interface DemoViewController ()
 
 @property (nonatomic, strong) UIButton *addPhotoButton;
+@property (nonatomic, strong) NSMutableArray *imageViewArray;
 
 @end
 
@@ -20,27 +21,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:({
-        _addPhotoButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 40, 100, 44)];
-        [_addPhotoButton setTitle:@"选择照片" forState:UIControlStateNormal];
-        [_addPhotoButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [_addPhotoButton setBackgroundColor:[UIColor lightGrayColor]];
+        _addPhotoButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        _addPhotoButton.frame = CGRectMake(0, 25, 44, 44);
         [_addPhotoButton addTarget:self action:@selector(addPhotoButtonClick) forControlEvents:UIControlEventTouchUpInside];
         _addPhotoButton;
     })];
 }
 
 - (void)addPhotoButtonClick {
-    GWLPhotoLibrayController *photoSelector = [[GWLPhotoLibrayController alloc]init];
-    photoSelector.maxCount = 10;
     __weak typeof (self)weakSelf = self;
-    photoSelector.block = ^(id result){
-        [weakSelf displayImages:result];
-    };
+    GWLPhotoLibrayController *photoSelector = [GWLPhotoLibrayController photoLibrayControllerWithBlock:^(NSArray *images) {
+        [weakSelf displayImages:images];
+    }];
+    photoSelector.maxCount = 10;
     [self presentViewController:photoSelector animated:YES completion:nil];
 }
 
 - (void)displayImages:(NSArray *)images {
-    NSLog(@"%@", images);
+    for (UIImageView *imageView in self.imageViewArray) {
+        [imageView removeFromSuperview];
+    }
+    [self.imageViewArray removeAllObjects];
+    self.imageViewArray = nil;
+    
+    NSInteger index = 0;
+    NSInteger rowMax = 5;
+    CGFloat imageViewWidth = CGRectGetWidth(self.view.frame) / rowMax;
+    CGFloat imageViewHeight = imageViewWidth;
+    for (UIImage *image in images) {
+        UIImageView *imageView = [[UIImageView alloc]init];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;
+        CGFloat imageViewX = (index % rowMax) * imageViewWidth;
+        CGFloat imageViewY = (index / rowMax) * imageViewHeight;
+        imageView.frame = CGRectMake(imageViewX, CGRectGetMaxY(_addPhotoButton.frame) + imageViewY + 10, imageViewWidth, imageViewHeight);
+        [imageView setImage:image];
+        [self.view addSubview:imageView];
+        [self.imageViewArray addObject:imageView];
+        index++;
+    }
+}
+
+#pragma mark Layz loading
+- (NSMutableArray *)imageViewArray {
+    if (!_imageViewArray) {
+        _imageViewArray = [NSMutableArray array];
+    }
+    return _imageViewArray;
 }
 
 @end

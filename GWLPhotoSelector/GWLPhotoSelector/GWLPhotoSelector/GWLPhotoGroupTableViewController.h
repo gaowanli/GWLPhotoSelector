@@ -13,8 +13,8 @@
 
 @property(nonatomic, assign) NSInteger maxCount;
 @property(nonatomic, strong) NSArray *photoGroupArray;
-/**回调*/
 @property (nonatomic, copy) photoSelectorBlock block;
+@property (nonatomic, assign, getter=canMultiAlbumSelect) BOOL multiAlbumSelect;
 
 - (void)showErrorMessageView;
 

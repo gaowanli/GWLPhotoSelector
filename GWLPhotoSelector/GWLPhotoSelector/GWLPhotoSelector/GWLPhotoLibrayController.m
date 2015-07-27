@@ -13,6 +13,7 @@
 
 @interface GWLPhotoLibrayController ()
 
+@property (nonatomic, copy) photoSelectorBlock block;
 @property(nonatomic, strong) GWLPhotoGroupTableViewController *photoGroupTableViewController;
 @property(nonatomic, strong) ALAssetsLibrary *library;
 @property(nonatomic, strong) NSMutableArray *photoGroupArray;
@@ -21,7 +22,12 @@
 
 @implementation GWLPhotoLibrayController
 
-- (instancetype)init {
++ (instancetype)photoLibrayControllerWithBlock:(photoSelectorBlock) block {
+    return [[self alloc]initWithBlock:block];
+}
+
+- (instancetype)initWithBlock:(photoSelectorBlock) block {
+    _block = block;
     return [super initWithRootViewController:self.photoGroupTableViewController];
 }
 
@@ -78,7 +84,6 @@
 - (GWLPhotoGroupTableViewController *)photoGroupTableViewController {
     if (!_photoGroupTableViewController) {
         _photoGroupTableViewController = [[GWLPhotoGroupTableViewController alloc]init];
-        _photoGroupTableViewController.block = self.block;
     }
     return _photoGroupTableViewController;
 }
@@ -100,10 +105,12 @@
 - (void)setMaxCount:(NSInteger)maxCount {
     _maxCount = maxCount;
     self.photoGroupTableViewController.maxCount = maxCount;
+    self.photoGroupTableViewController.block = self.block;
 }
 
-- (void)dealloc {
-    NSLog(@"%s -- dealloc",__func__);
+- (void)setMultiAlbumSelect:(BOOL)multiAlbumSelect {
+    _multiAlbumSelect = multiAlbumSelect;
+    self.photoGroupTableViewController.multiAlbumSelect = multiAlbumSelect;
 }
 
 @end
