@@ -34,6 +34,7 @@
         [weakSelf displayImages:images];
     }];
     photoSelector.maxCount = 10;
+    photoSelector.multiAlbumSelect = YES;
     [self presentViewController:photoSelector animated:YES completion:nil];
 }
 
