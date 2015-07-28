@@ -1,4 +1,9 @@
-# GWLPhotoSelector 相册照片多张选择控件
+# GWLPhotoSelector 
+## 相册照片多张选择控件
+
+* iOS 8.0+
+* Xcode 7.0 beta
+* Swift 2.0
 使用方法：
 -----------------------------
     1.#import "GWLPhotoLibrayController.h"
