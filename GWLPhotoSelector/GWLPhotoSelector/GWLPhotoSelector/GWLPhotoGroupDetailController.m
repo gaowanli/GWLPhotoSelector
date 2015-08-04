@@ -112,7 +112,7 @@ static int const kROWPHOTO = 4;
             ALAssetRepresentation *assetRepresentation = [sset defaultRepresentation];
             CGFloat imageScale = [assetRepresentation scale];
             UIImageOrientation imageOrientation = (UIImageOrientation)[assetRepresentation orientation];
-            UIImage *originalImage = [UIImage imageWithCGImage:sset.defaultRepresentation.fullResolutionImage scale:imageScale orientation:imageOrientation];
+            UIImage *originalImage = [UIImage imageWithCGImage:sset.defaultRepresentation.fullScreenImage scale:imageScale orientation:imageOrientation];
             [selfVc.imageArray addObject:originalImage];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
