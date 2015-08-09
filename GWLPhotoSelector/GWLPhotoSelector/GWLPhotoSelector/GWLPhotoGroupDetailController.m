@@ -119,10 +119,13 @@ static int const kROWPHOTO = 4;
             if (selfVc.block) {
                 [selfVc dismissViewControllerAnimated:YES completion:^{
                     selfVc.block(selfVc.imageArray);
+                    selfVc.selectedPhotos = nil;
+                    selfVc.imageArray = nil;
                 }];
+            }else {
+                selfVc.selectedPhotos = nil;
+                selfVc.imageArray = nil;
             }
-            selfVc.selectedPhotos = nil;
-            selfVc.imageArray = nil;
         });
     }];
 }
