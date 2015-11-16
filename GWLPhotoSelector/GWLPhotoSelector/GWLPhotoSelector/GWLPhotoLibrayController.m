@@ -10,24 +10,26 @@
 #import "GWLPhotoGroup.h"
 #import "GWLPhotoALAssets.h"
 #import "GWLPhotoGroupTableViewController.h"
+#import <Photos/Photos.h>
 
 @interface GWLPhotoLibrayController ()
 
-@property (nonatomic, copy) photoSelectorBlock block;
+@property (nonatomic, copy) kGWLPhotoSelector_ArrayBlock block;
 @property(nonatomic, strong) GWLPhotoGroupTableViewController *photoGroupTableViewController;
 @property(nonatomic, strong) ALAssetsLibrary *library;
 @property(nonatomic, strong) NSMutableArray *photoGroupArray;
+@property (nonatomic, strong) PHImageRequestOptions *imageOptions;
 
 @end
 
 @implementation GWLPhotoLibrayController
 
-+ (instancetype)photoLibrayControllerWithBlock:(photoSelectorBlock) block {
++ (instancetype)photoLibrayControllerWithBlock:(kGWLPhotoSelector_ArrayBlock) block {
     return [[self alloc]initWithBlock:block];
 }
 
-- (instancetype)initWithBlock:(photoSelectorBlock) block {
-    _block = block;
+- (instancetype)initWithBlock:(kGWLPhotoSelector_ArrayBlock) block {
+    _block = [block copy];
     return [super initWithRootViewController:self.photoGroupTableViewController];
 }
 
@@ -46,38 +48,91 @@
                 });
             }
         };
-        
-        ALAssetsGroupEnumerationResultsBlock groupEnumerAtion = ^(ALAsset *result, NSUInteger index, BOOL *stop){
-            if (result != NULL) {
-                if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
-                    GWLPhotoGroup *photoGroup = [selfVc.photoGroupArray lastObject];
-                    GWLPhotoALAssets *photoALAssets = [[GWLPhotoALAssets alloc]init];
-                    photoALAssets.photoALAsset = result;
-                    photoALAssets.selected = NO;
-                    [photoGroup.photoALAssets addObject:photoALAssets];
+        if (GWLPhotoSelector_Above_iOS8) {
+            PHFetchResult *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+            [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+                [selfVc photoGroupWithCollection:collection];
+            }];
+            
+            collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+            [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+                if ([collection.localizedTitle isEqualToString:@"Camera Roll"]) {
+                    [selfVc photoGroupWithCollection:collection];
                 }
-            }
-        };
-        
-        ALAssetsLibraryGroupsEnumerationResultsBlock libraryGroupsEnumeration = ^(ALAssetsGroup *aLAssets, BOOL* stop){
-            if (aLAssets != nil) {
-                NSString *groupName = [aLAssets valueForProperty:ALAssetsGroupPropertyName];
-                UIImage *posterImage = [UIImage imageWithCGImage:[aLAssets posterImage]];
-                
-                GWLPhotoGroup *photoGroup = [[GWLPhotoGroup alloc]init];
-                photoGroup.groupName = groupName;
-                photoGroup.groupIcon = posterImage;
-                [selfVc.photoGroupArray addObject:photoGroup];
-                
-                [aLAssets enumerateAssetsUsingBlock:groupEnumerAtion];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    selfVc.photoGroupTableViewController.photoGroupArray = selfVc.photoGroupArray;
-                });
-            }
-        };
-        
-        [selfVc.library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:libraryGroupsEnumeration failureBlock:failureblock];
+            }];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                selfVc.photoGroupTableViewController.photoGroupArray = selfVc.photoGroupArray;
+            });
+        }else {
+            [selfVc.library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *aLAssets, BOOL* stop){
+                if (aLAssets != nil) {
+                    NSString *groupName = [aLAssets valueForProperty:ALAssetsGroupPropertyName];
+                    UIImage *posterImage = [UIImage imageWithCGImage:[aLAssets posterImage]];
+                    
+                    GWLPhotoGroup *photoGroup = [[GWLPhotoGroup alloc]init];
+                    photoGroup.groupName = groupName;
+                    photoGroup.groupIcon = posterImage;
+                    [selfVc.photoGroupArray addObject:photoGroup];
+                    
+                    [aLAssets enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop){
+                        if (result != NULL) {
+                            if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
+                                GWLPhotoALAssets *photoALAssets = [[GWLPhotoALAssets alloc]init];
+                                photoALAssets.photoALAsset = result;
+                                photoALAssets.selected = NO;
+                                [photoGroup.photoALAssets addObject:photoALAssets];
+                            }
+                        }
+                    }];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        selfVc.photoGroupTableViewController.photoGroupArray = selfVc.photoGroupArray;
+                    });
+                }
+            } failureBlock:failureblock];
+        }
     });
+}
+
+- (void)photoGroupWithCollection:(PHAssetCollection *)collection {
+    [self coverImageWithCollection:collection completion:^(UIImage *image) {
+        GWLPhotoGroup *photoGroup = [[GWLPhotoGroup alloc]init];
+        photoGroup.groupName = collection.localizedTitle;
+        photoGroup.groupIcon = image;
+        [self.photoGroupArray addObject:photoGroup];
+        [self photoGroupSetALAsset:photoGroup collection:collection];
+    }];
+}
+
+- (void)coverImageWithCollection:(PHAssetCollection *)collection completion:(kGWLPhotoSelector_imageBlock)completion {
+    PHFetchResult *assetResult = [PHAsset fetchAssetsInAssetCollection:collection options:nil];
+    [assetResult enumerateObjectsUsingBlock:^(PHAsset *asset, NSUInteger idx, BOOL *stop) {
+        if (asset.mediaType == PHAssetMediaTypeImage) {
+            CGSize targetSize = CGSizeMake(GWLPhotoSelector_Cell_Height, GWLPhotoSelector_Cell_Height);
+            [self imageWithAsset:asset targetSize:targetSize completion:^(UIImage *image) {
+                completion(image);
+                *stop = YES;
+            }];
+        }
+    }];
+}
+
+- (void)photoGroupSetALAsset:(GWLPhotoGroup *)photoGroup collection:(PHAssetCollection *)collection {
+    PHFetchResult *assetResult = [PHAsset fetchAssetsInAssetCollection:collection options:nil];
+    [assetResult enumerateObjectsUsingBlock:^(PHAsset *asset, NSUInteger idx, BOOL *stop) {
+        if (asset.mediaType == PHAssetMediaTypeImage) {
+            GWLPhotoALAssets *photoALAssets = [[GWLPhotoALAssets alloc]init];
+            photoALAssets.photoAsset = asset;
+            photoALAssets.selected = NO;
+            [photoGroup.photoALAssets addObject:photoALAssets];
+        }
+    }];
+}
+
+- (void)imageWithAsset:(PHAsset *)asset targetSize:(CGSize)targetSize completion:(kGWLPhotoSelector_imageBlock)completion {
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeDefault options:self.imageOptions resultHandler:^(UIImage *result, NSDictionary *info) {
+        completion(result);
+    }];
 }
 
 #pragma mark - getter && setter
@@ -100,6 +155,14 @@
         _photoGroupArray = [NSMutableArray array];
     }
     return _photoGroupArray;
+}
+
+- (PHImageRequestOptions *)imageOptions {
+    if (!_imageOptions) {
+        _imageOptions = [[PHImageRequestOptions alloc] init];
+        _imageOptions.synchronous = YES;
+    }
+    return _imageOptions;
 }
 
 - (void)setMaxCount:(NSInteger)maxCount {

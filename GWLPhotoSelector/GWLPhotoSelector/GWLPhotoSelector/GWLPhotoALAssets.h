@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 
 @interface GWLPhotoALAssets : NSObject
 
 @property(nonatomic ,strong) ALAsset *photoALAsset;
+@property(nonatomic ,strong) PHAsset *photoAsset;
 @property(nonatomic, assign, getter=isSelected) BOOL selected;
 
 @end

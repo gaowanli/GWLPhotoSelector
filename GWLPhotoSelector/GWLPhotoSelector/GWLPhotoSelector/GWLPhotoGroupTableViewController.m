@@ -114,14 +114,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GWLPhotoGroupCell *cell = [GWLPhotoGroupCell cellWithTableView:tableView];
     GWLPhotoGroup *photoGroup = self.photoGroupArray[indexPath.section];
-    if (photoGroup.photoALAssets.count == 0)
+    if (photoGroup.photoALAssets.count == 0) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }else {
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    }
     cell.photoGroup = photoGroup;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 55;
+    return GWLPhotoSelector_Cell_Height;
 }
 
 #pragma mark - UITableViewDelegate

@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		859852591BF5D4D50044FA40 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859852581BF5D4D50044FA40 /* Launch Screen.storyboard */; };
 		85FCE9B41B60BE88004D2B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9B31B60BE88004D2B20 /* main.m */; };
 		85FCE9B71B60BE88004D2B20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9B61B60BE88004D2B20 /* AppDelegate.m */; };
-		85FCE9CE1B60BE89004D2B20 /* GWLPhotoSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9CD1B60BE89004D2B20 /* GWLPhotoSelectorTests.m */; };
 		85FCE9DE1B60BF19004D2B20 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9DC1B60BF19004D2B20 /* DemoViewController.m */; };
 		85FCE9E61B60C5DD004D2B20 /* GWLPhotoLibrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */; };
-		85FCE9EA1B60C6D6004D2B20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FCE9E91B60C6D6004D2B20 /* Default-568h@2x.png */; };
 		85FCE9ED1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */; };
 		85FCE9F01B60CBEB004D2B20 /* GWLPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */; };
 		85FCE9F31B60CF06004D2B20 /* GWLPhotoALAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */; };
@@ -20,30 +19,17 @@
 		85FCE9F91B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		85FCE9C81B60BE89004D2B20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 85FCE9A61B60BE88004D2B20 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 85FCE9AD1B60BE88004D2B20;
-			remoteInfo = GWLPhotoSelector;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		859852581BF5D4D50044FA40 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		85FCE9AE1B60BE88004D2B20 /* GWLPhotoSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWLPhotoSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FCE9B21B60BE88004D2B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85FCE9B31B60BE88004D2B20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85FCE9B51B60BE88004D2B20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		85FCE9B61B60BE88004D2B20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		85FCE9C71B60BE89004D2B20 /* GWLPhotoSelectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GWLPhotoSelectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85FCE9CC1B60BE89004D2B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85FCE9CD1B60BE89004D2B20 /* GWLPhotoSelectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoSelectorTests.m; sourceTree = "<group>"; };
 		85FCE9DB1B60BF19004D2B20 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		85FCE9DC1B60BF19004D2B20 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		85FCE9E41B60C5DD004D2B20 /* GWLPhotoLibrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoLibrayController.h; sourceTree = "<group>"; };
 		85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoLibrayController.m; sourceTree = "<group>"; };
-		85FCE9E91B60C6D6004D2B20 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		85FCE9EB1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroupTableViewController.h; sourceTree = "<group>"; };
 		85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroupTableViewController.m; sourceTree = "<group>"; };
 		85FCE9EE1B60CBEB004D2B20 /* GWLPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroup.h; sourceTree = "<group>"; };
@@ -64,13 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85FCE9C41B60BE89004D2B20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				85FCE9B01B60BE88004D2B20 /* GWLPhotoSelector */,
-				85FCE9CA1B60BE89004D2B20 /* GWLPhotoSelectorTests */,
 				85FCE9AF1B60BE88004D2B20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				85FCE9AE1B60BE88004D2B20 /* GWLPhotoSelector.app */,
-				85FCE9C71B60BE89004D2B20 /* GWLPhotoSelectorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,26 +85,9 @@
 		85FCE9B11B60BE88004D2B20 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				85FCE9E91B60C6D6004D2B20 /* Default-568h@2x.png */,
 				85FCE9B21B60BE88004D2B20 /* Info.plist */,
 				85FCE9B31B60BE88004D2B20 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		85FCE9CA1B60BE89004D2B20 /* GWLPhotoSelectorTests */ = {
-			isa = PBXGroup;
-			children = (
-				85FCE9CD1B60BE89004D2B20 /* GWLPhotoSelectorTests.m */,
-				85FCE9CB1B60BE89004D2B20 /* Supporting Files */,
-			);
-			path = GWLPhotoSelectorTests;
-			sourceTree = "<group>";
-		};
-		85FCE9CB1B60BE89004D2B20 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				85FCE9CC1B60BE89004D2B20 /* Info.plist */,
+				859852581BF5D4D50044FA40 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,39 +131,17 @@
 			productReference = 85FCE9AE1B60BE88004D2B20 /* GWLPhotoSelector.app */;
 			productType = "com.apple.product-type.application";
 		};
-		85FCE9C61B60BE89004D2B20 /* GWLPhotoSelectorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 85FCE9D41B60BE89004D2B20 /* Build configuration list for PBXNativeTarget "GWLPhotoSelectorTests" */;
-			buildPhases = (
-				85FCE9C31B60BE89004D2B20 /* Sources */,
-				85FCE9C41B60BE89004D2B20 /* Frameworks */,
-				85FCE9C51B60BE89004D2B20 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				85FCE9C91B60BE89004D2B20 /* PBXTargetDependency */,
-			);
-			name = GWLPhotoSelectorTests;
-			productName = GWLPhotoSelectorTests;
-			productReference = 85FCE9C71B60BE89004D2B20 /* GWLPhotoSelectorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		85FCE9A61B60BE88004D2B20 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = GWL;
 				TargetAttributes = {
 					85FCE9AD1B60BE88004D2B20 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					85FCE9C61B60BE89004D2B20 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 85FCE9AD1B60BE88004D2B20;
 					};
 				};
 			};
@@ -221,7 +159,6 @@
 			projectRoot = "";
 			targets = (
 				85FCE9AD1B60BE88004D2B20 /* GWLPhotoSelector */,
-				85FCE9C61B60BE89004D2B20 /* GWLPhotoSelectorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,15 +168,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85FCE9EA1B60C6D6004D2B20 /* Default-568h@2x.png in Resources */,
+				859852591BF5D4D50044FA40 /* Launch Screen.storyboard in Resources */,
 				85FCE9F91B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		85FCE9C51B60BE89004D2B20 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,23 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85FCE9C31B60BE89004D2B20 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85FCE9CE1B60BE89004D2B20 /* GWLPhotoSelectorTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		85FCE9C91B60BE89004D2B20 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 85FCE9AD1B60BE88004D2B20 /* GWLPhotoSelector */;
-			targetProxy = 85FCE9C81B60BE89004D2B20 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		85FCE9CF1B60BE89004D2B20 /* Debug */ = {
@@ -301,6 +215,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -363,10 +278,10 @@
 		85FCE9D21B60BE89004D2B20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GWLPhotoSelector/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "gaowanli.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -374,45 +289,11 @@
 		85FCE9D31B60BE89004D2B20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GWLPhotoSelector/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "gaowanli.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		85FCE9D51B60BE89004D2B20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GWLPhotoSelectorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GWLPhotoSelector.app/GWLPhotoSelector";
-			};
-			name = Debug;
-		};
-		85FCE9D61B60BE89004D2B20 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GWLPhotoSelectorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GWLPhotoSelector.app/GWLPhotoSelector";
 			};
 			name = Release;
 		};
@@ -435,14 +316,7 @@
 				85FCE9D31B60BE89004D2B20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		85FCE9D41B60BE89004D2B20 /* Build configuration list for PBXNativeTarget "GWLPhotoSelectorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				85FCE9D51B60BE89004D2B20 /* Debug */,
-				85FCE9D61B60BE89004D2B20 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,6 @@
 @property(nonatomic, assign) NSInteger maxCount;
 @property(nonatomic, strong) NSArray *photoALAssets;
 /**回调*/
-@property (nonatomic, copy) photoSelectorBlock block;
+@property (nonatomic, copy) kGWLPhotoSelector_ArrayBlock block;
 
 @end

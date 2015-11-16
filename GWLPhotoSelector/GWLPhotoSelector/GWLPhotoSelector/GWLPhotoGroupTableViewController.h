@@ -13,7 +13,7 @@
 
 @property(nonatomic, assign) NSInteger maxCount;
 @property(nonatomic, strong) NSArray *photoGroupArray;
-@property (nonatomic, copy) photoSelectorBlock block;
+@property (nonatomic, copy) kGWLPhotoSelector_ArrayBlock block;
 @property (nonatomic, assign, getter=canMultiAlbumSelect) BOOL multiAlbumSelect;
 
 - (void)showErrorMessageView;

@@ -23,10 +23,17 @@
 
 - (void)setPhotoALAsset:(GWLPhotoALAssets *)photoALAsset {
     _photoALAsset = photoALAsset;
-    ALAsset *alasset = photoALAsset.photoALAsset;
-    if ([[alasset valueForProperty:@"ALAssetPropertyType"] isEqualToString:ALAssetTypePhoto]) {
-        self.iconView.image = [UIImage imageWithCGImage:alasset.thumbnail];
+    if (GWLPhotoSelector_Above_iOS8) {
+        [self imageWithAsset:photoALAsset.photoAsset completion:^(UIImage *image) {
+            self.iconView.image = image;
+        }];
+    }else {
+        ALAsset *alasset = photoALAsset.photoALAsset;
+        if ([[alasset valueForProperty:@"ALAssetPropertyType"] isEqualToString:ALAssetTypePhoto]) {
+            self.iconView.image = [UIImage imageWithCGImage:alasset.thumbnail];
+        }
     }
+    
     self.selectedView.hidden = !photoALAsset.isSelected;
     self.selectedBtn.hidden = !photoALAsset.isSelected;
 }
@@ -34,6 +41,8 @@
 - (UIImageView *)iconView {
     if (!_iconView) {
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:self.bounds];
+        iconView.contentMode = UIViewContentModeScaleAspectFill;
+        iconView.clipsToBounds = YES;
         [self.contentView addSubview:iconView];
         _iconView = iconView;
     }
@@ -67,6 +76,14 @@
     return _selectedBtn;
 }
 
+- (void)imageWithAsset:(PHAsset *)asset completion:(kGWLPhotoSelector_imageBlock)completion {
+    PHImageRequestOptions *imageOptions = [[PHImageRequestOptions alloc] init];
+    imageOptions.synchronous = YES;
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(self.bounds.size.width * 2, self.bounds.size.height * 2) contentMode:PHImageContentModeAspectFill options:imageOptions resultHandler:^(UIImage *result, NSDictionary *info) {
+        completion(result);
+    }];
+}
+
 @end
 
 @interface GWLPhotoGroupDetailController ()
@@ -79,12 +96,11 @@
 
 @implementation GWLPhotoGroupDetailController
 
-static NSString * const reuseIdentifier = @"photoCell";
-static int const kROWPHOTO = 4;
+static NSString * const reuseIdentifier = @"gwlPhotoCell";
 
 - (instancetype)init {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    CGFloat itemW = ([UIScreen mainScreen].bounds.size.width - kROWPHOTO * 2) / kROWPHOTO;
+    CGFloat itemW = ([UIScreen mainScreen].bounds.size.width - GWLPhotoSelector_RowPhotoCount * 2) / GWLPhotoSelector_RowPhotoCount;
     layout.itemSize = CGSizeMake(itemW, itemW);
     layout.minimumInteritemSpacing = 1;
     layout.minimumLineSpacing = 1;
@@ -108,12 +124,18 @@ static int const kROWPHOTO = 4;
     __weak typeof (self) selfVc = self;
     [[[NSOperationQueue alloc]init] addOperationWithBlock:^{
         for (GWLPhotoALAssets *photoALAsset in self.selectedPhotos) {
-            ALAsset *sset = photoALAsset.photoALAsset;
-            ALAssetRepresentation *assetRepresentation = [sset defaultRepresentation];
-            CGFloat imageScale = [assetRepresentation scale];
-            UIImageOrientation imageOrientation = (UIImageOrientation)[assetRepresentation orientation];
-            UIImage *originalImage = [UIImage imageWithCGImage:sset.defaultRepresentation.fullScreenImage scale:imageScale orientation:imageOrientation];
-            [selfVc.imageArray addObject:originalImage];
+            if (GWLPhotoSelector_Above_iOS8) {
+                [selfVc imageWithAsset:photoALAsset.photoAsset completion:^(UIImage *image) {
+                    [selfVc.imageArray addObject:image];
+                }];
+            }else {
+                ALAsset *sset = photoALAsset.photoALAsset;
+                ALAssetRepresentation *assetRepresentation = [sset defaultRepresentation];
+                CGFloat imageScale = [assetRepresentation scale];
+                UIImageOrientation imageOrientation = (UIImageOrientation)[assetRepresentation orientation];
+                UIImage *originalImage = [UIImage imageWithCGImage:sset.defaultRepresentation.fullScreenImage scale:imageScale orientation:imageOrientation];
+                [selfVc.imageArray addObject:originalImage];
+            }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             if (selfVc.block) {
@@ -127,6 +149,14 @@ static int const kROWPHOTO = 4;
                 selfVc.imageArray = nil;
             }
         });
+    }];
+}
+
+- (void)imageWithAsset:(PHAsset *)asset completion:(kGWLPhotoSelector_imageBlock)completion {
+    PHImageRequestOptions *imageOptions = [[PHImageRequestOptions alloc] init];
+    imageOptions.synchronous = YES;
+    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight) contentMode:PHImageContentModeAspectFill options:imageOptions resultHandler:^(UIImage *result, NSDictionary *info) {
+        completion(result);
     }];
 }
 

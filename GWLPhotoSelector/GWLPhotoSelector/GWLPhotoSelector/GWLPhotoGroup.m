@@ -17,4 +17,11 @@
     return _photoALAssets;
 }
 
+- (void)setGroupName:(NSString *)groupName {
+    if ([groupName isEqualToString:@"Camera Roll"]) {
+        groupName = @"相机胶卷";
+    }
+    _groupName = groupName;
+}
+
 @end

@@ -16,6 +16,6 @@
 /**是否可以跨相册选择*/
 @property (nonatomic, assign) BOOL multiAlbumSelect;
 
-+ (instancetype)photoLibrayControllerWithBlock:(photoSelectorBlock) block;
++ (instancetype)photoLibrayControllerWithBlock:(kGWLPhotoSelector_ArrayBlock) block;
 
 @end

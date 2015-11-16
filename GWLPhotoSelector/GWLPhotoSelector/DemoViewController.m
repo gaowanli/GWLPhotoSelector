@@ -56,6 +56,7 @@
         CGFloat imageViewX = (index % rowMax) * imageViewWidth;
         CGFloat imageViewY = (index / rowMax) * imageViewHeight;
         imageView.frame = CGRectMake(imageViewX, CGRectGetMaxY(_addPhotoButton.frame) + imageViewY + 10, imageViewWidth, imageViewHeight);
+        NSLog(@"%@", NSStringFromCGSize(image.size));
         [imageView setImage:image];
         [self.view addSubview:imageView];
         [self.imageViewArray addObject:imageView];
