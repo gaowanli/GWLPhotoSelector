@@ -7,7 +7,6 @@
 //
 
 #import "GWLPhotoGroupDetailController.h"
-#import "GWLPhotoALAssets.h"
 
 @interface GWLPhotoCell : UICollectionViewCell
 
@@ -64,7 +63,8 @@
     if (!_selectedBtn) {
         UIButton *selectedBtn = [[UIButton alloc]init];
         selectedBtn.userInteractionEnabled = NO;
-        [selectedBtn setImage:[UIImage imageNamed:@"GWLPhotoSelector_sel"] forState:UIControlStateNormal];
+        NSString *imageFile = [[[NSBundle mainBundle]resourcePath] stringByAppendingPathComponent:@"GWLPhotoSelector.bundle/sel@2x.png"];
+        [selectedBtn setImage:[UIImage imageWithContentsOfFile:imageFile] forState:UIControlStateNormal];
         CGFloat margin = 5;
         selectedBtn.frame = CGRectMake(0, 0, selectedBtn.currentImage.size.width, selectedBtn.currentImage.size.height);
         CGFloat selectedBtnX = CGRectGetWidth(_iconView.frame) - CGRectGetWidth(selectedBtn.frame) - margin;

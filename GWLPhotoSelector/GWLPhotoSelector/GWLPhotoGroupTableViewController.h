@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GWLPhotoSelectorHeader.h"
+#import "GWLPhotoLibrayController.h"
 
 @interface GWLPhotoGroupTableViewController : UITableViewController
 

@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GWLPhotoSelectorHeader.h"
+#import "GWLPhotoLibrayController.h"
 
 @interface GWLPhotoGroupDetailController : UICollectionViewController
 
 @property(nonatomic, assign) NSInteger maxCount;
 @property(nonatomic, strong) NSArray *photoALAssets;
-/**回调*/
 @property (nonatomic, copy) kGWLPhotoSelector_ArrayBlock block;
 
 @end

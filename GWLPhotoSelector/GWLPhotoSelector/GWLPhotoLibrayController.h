@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GWLPhotoSelectorHeader.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 
 @interface GWLPhotoLibrayController : UINavigationController
 
@@ -17,5 +19,21 @@
 @property (nonatomic, assign) BOOL multiAlbumSelect;
 
 + (instancetype)photoLibrayControllerWithBlock:(kGWLPhotoSelector_ArrayBlock) block;
+
+@end
+
+@interface GWLPhotoGroup : NSObject
+
+@property(nonatomic, copy) NSString *groupName;
+@property(nonatomic, strong) UIImage *groupIcon;
+@property(nonatomic, strong) NSMutableArray *photoALAssets;
+
+@end
+
+@interface GWLPhotoALAssets : NSObject
+
+@property(nonatomic ,strong) ALAsset *photoALAsset;
+@property(nonatomic ,strong) PHAsset *photoAsset;
+@property(nonatomic, assign, getter=isSelected) BOOL selected;
 
 @end

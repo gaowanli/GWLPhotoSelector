@@ -7,8 +7,6 @@
 //
 
 #import "GWLPhotoGroupTableViewController.h"
-#import "GWLPhotoALAssets.h"
-#import "GWLPhotoGroup.h"
 #import "GWLPhotoGroupDetailController.h"
 
 @interface GWLPhotoGroupCell : UITableViewCell

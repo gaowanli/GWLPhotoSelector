@@ -13,10 +13,8 @@
 		85FCE9DE1B60BF19004D2B20 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9DC1B60BF19004D2B20 /* DemoViewController.m */; };
 		85FCE9E61B60C5DD004D2B20 /* GWLPhotoLibrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */; };
 		85FCE9ED1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */; };
-		85FCE9F01B60CBEB004D2B20 /* GWLPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */; };
-		85FCE9F31B60CF06004D2B20 /* GWLPhotoALAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */; };
 		85FCE9F61B60D220004D2B20 /* GWLPhotoGroupDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FCE9F51B60D220004D2B20 /* GWLPhotoGroupDetailController.m */; };
-		85FCE9F91B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */; };
+		AD9890111BFA11BE004D1458 /* GWLPhotoSelector.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD9890101BFA11BE004D1458 /* GWLPhotoSelector.bundle */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,14 +30,10 @@
 		85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoLibrayController.m; sourceTree = "<group>"; };
 		85FCE9EB1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroupTableViewController.h; sourceTree = "<group>"; };
 		85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroupTableViewController.m; sourceTree = "<group>"; };
-		85FCE9EE1B60CBEB004D2B20 /* GWLPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroup.h; sourceTree = "<group>"; };
-		85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroup.m; sourceTree = "<group>"; };
-		85FCE9F11B60CF06004D2B20 /* GWLPhotoALAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoALAssets.h; sourceTree = "<group>"; };
-		85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoALAssets.m; sourceTree = "<group>"; };
 		85FCE9F41B60D220004D2B20 /* GWLPhotoGroupDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLPhotoGroupDetailController.h; sourceTree = "<group>"; };
 		85FCE9F51B60D220004D2B20 /* GWLPhotoGroupDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLPhotoGroupDetailController.m; sourceTree = "<group>"; };
 		85FCE9F71B60DA07004D2B20 /* GWLPhotoSelectorHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWLPhotoSelectorHeader.h; sourceTree = "<group>"; };
-		85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GWLPhotoSelector_sel@2x.png"; sourceTree = "<group>"; };
+		AD9890101BFA11BE004D1458 /* GWLPhotoSelector.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GWLPhotoSelector.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +89,10 @@
 		85FCE9D71B60BEB3004D2B20 /* GWLPhotoSelector */ = {
 			isa = PBXGroup;
 			children = (
-				85FCE9F81B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png */,
+				AD9890101BFA11BE004D1458 /* GWLPhotoSelector.bundle */,
 				85FCE9F71B60DA07004D2B20 /* GWLPhotoSelectorHeader.h */,
 				85FCE9E41B60C5DD004D2B20 /* GWLPhotoLibrayController.h */,
 				85FCE9E51B60C5DD004D2B20 /* GWLPhotoLibrayController.m */,
-				85FCE9EE1B60CBEB004D2B20 /* GWLPhotoGroup.h */,
-				85FCE9EF1B60CBEB004D2B20 /* GWLPhotoGroup.m */,
-				85FCE9F11B60CF06004D2B20 /* GWLPhotoALAssets.h */,
-				85FCE9F21B60CF06004D2B20 /* GWLPhotoALAssets.m */,
 				85FCE9EB1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.h */,
 				85FCE9EC1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m */,
 				85FCE9F41B60D220004D2B20 /* GWLPhotoGroupDetailController.h */,
@@ -168,8 +158,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9890111BFA11BE004D1458 /* GWLPhotoSelector.bundle in Resources */,
 				859852591BF5D4D50044FA40 /* Launch Screen.storyboard in Resources */,
-				85FCE9F91B60DA75004D2B20 /* GWLPhotoSelector_sel@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,13 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				85FCE9E61B60C5DD004D2B20 /* GWLPhotoLibrayController.m in Sources */,
-				85FCE9F31B60CF06004D2B20 /* GWLPhotoALAssets.m in Sources */,
 				85FCE9F61B60D220004D2B20 /* GWLPhotoGroupDetailController.m in Sources */,
 				85FCE9DE1B60BF19004D2B20 /* DemoViewController.m in Sources */,
 				85FCE9B71B60BE88004D2B20 /* AppDelegate.m in Sources */,
 				85FCE9B41B60BE88004D2B20 /* main.m in Sources */,
 				85FCE9ED1B60C78D004D2B20 /* GWLPhotoGroupTableViewController.m in Sources */,
-				85FCE9F01B60CBEB004D2B20 /* GWLPhotoGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
