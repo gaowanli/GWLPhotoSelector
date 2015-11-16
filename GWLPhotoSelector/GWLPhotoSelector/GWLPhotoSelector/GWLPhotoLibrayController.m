@@ -40,31 +40,35 @@
 
 - (void)setupImagePickerController {
     __weak typeof (self) selfVc = self;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *error) {
-            if (error != nil) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [selfVc.photoGroupTableViewController showErrorMessageView];
-                });
-            }
-        };
-        if (GWLPhotoSelector_Above_iOS8) {
-            PHFetchResult *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-            [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+    if (GWLPhotoSelector_Above_iOS8) {
+        if ([PHPhotoLibrary authorizationStatus] != PHAuthorizationStatusAuthorized) {
+            [selfVc.photoGroupTableViewController showErrorMessageView];
+            return;
+        }
+        PHFetchResult *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+        [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+            [selfVc photoGroupWithCollection:collection];
+        }];
+        
+        collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+        [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+            if ([collection.localizedTitle isEqualToString:@"Camera Roll"]) {
                 [selfVc photoGroupWithCollection:collection];
-            }];
-            
-            collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-            [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
-                if ([collection.localizedTitle isEqualToString:@"Camera Roll"]) {
-                    [selfVc photoGroupWithCollection:collection];
+            }
+        }];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            selfVc.photoGroupTableViewController.photoGroupArray = selfVc.photoGroupArray;
+        });
+    }else {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            ALAssetsLibraryAccessFailureBlock failureblock = ^(NSError *error) {
+                if (error != nil) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [selfVc.photoGroupTableViewController showErrorMessageView];
+                    });
                 }
-            }];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                selfVc.photoGroupTableViewController.photoGroupArray = selfVc.photoGroupArray;
-            });
-        }else {
+            };
             [selfVc.library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *aLAssets, BOOL* stop){
                 if (aLAssets != nil) {
                     NSString *groupName = [aLAssets valueForProperty:ALAssetsGroupPropertyName];
@@ -90,8 +94,8 @@
                     });
                 }
             } failureBlock:failureblock];
-        }
-    });
+        });
+    }
 }
 
 - (void)photoGroupWithCollection:(PHAssetCollection *)collection {

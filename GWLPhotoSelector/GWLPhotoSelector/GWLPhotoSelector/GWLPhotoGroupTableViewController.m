@@ -169,13 +169,13 @@
         [self.view addSubview:errorMessageView];
         
         UILabel *msgLabel = [[UILabel alloc]init];
-        msgLabel.text = @"未能读取到任何照片";
+        msgLabel.text = GWLPhotoSelector_ErrorMessageText;
         msgLabel.backgroundColor = [UIColor clearColor];
         msgLabel.font = [UIFont systemFontOfSize:15];
         msgLabel.textAlignment = NSTextAlignmentCenter;
         msgLabel.textColor = [UIColor lightGrayColor];
         CGFloat msgLabelHeight = 15;
-        msgLabel.frame = CGRectMake(0, (CGRectGetHeight(errorMessageView.frame) - msgLabelHeight) * 0.5 , CGRectGetWidth(errorMessageView.frame), msgLabelHeight);
+        msgLabel.frame = CGRectMake(0, (CGRectGetHeight(errorMessageView.frame) - msgLabelHeight - 64) * 0.5 , CGRectGetWidth(errorMessageView.frame), msgLabelHeight);
         [errorMessageView addSubview:msgLabel];
         
         _errorMessageView = errorMessageView;
