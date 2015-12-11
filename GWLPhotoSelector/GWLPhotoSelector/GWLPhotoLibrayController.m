@@ -51,7 +51,7 @@
                 
                 collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
                 [collections enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
-                    if ([collection.localizedTitle isEqualToString:@"Camera Roll"]) {
+                    if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumUserLibrary) {
                         [selfVc photoGroupWithCollection:collection];
                     }
                 }];
