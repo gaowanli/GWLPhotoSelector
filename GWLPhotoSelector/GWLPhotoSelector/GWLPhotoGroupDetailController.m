@@ -22,7 +22,7 @@
 
 - (void)setPhotoALAsset:(GWLPhotoALAssets *)photoALAsset {
     _photoALAsset = photoALAsset;
-    if (GWLPhotoSelector_Above_iOS8) {
+    if (kGWLPhotoSelector_Above_iOS8) {
         [self imageWithAsset:photoALAsset.photoAsset completion:^(UIImage *image) {
             self.iconView.image = image;
         }];
@@ -100,7 +100,7 @@ static NSString * const reuseIdentifier = @"gwlPhotoCell";
 
 - (instancetype)init {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    CGFloat itemW = ([UIScreen mainScreen].bounds.size.width - GWLPhotoSelector_RowPhotoCount * 2) / GWLPhotoSelector_RowPhotoCount;
+    CGFloat itemW = ([UIScreen mainScreen].bounds.size.width - kGWLPhotoSelector_RowPhotoCount * 2) / kGWLPhotoSelector_RowPhotoCount;
     layout.itemSize = CGSizeMake(itemW, itemW);
     layout.minimumInteritemSpacing = 1;
     layout.minimumLineSpacing = 1;
@@ -124,7 +124,7 @@ static NSString * const reuseIdentifier = @"gwlPhotoCell";
     __weak typeof (self) selfVc = self;
     [[[NSOperationQueue alloc]init] addOperationWithBlock:^{
         for (GWLPhotoALAssets *photoALAsset in self.selectedPhotos) {
-            if (GWLPhotoSelector_Above_iOS8) {
+            if (kGWLPhotoSelector_Above_iOS8) {
                 [selfVc imageWithAsset:photoALAsset.photoAsset completion:^(UIImage *image) {
                     [selfVc.imageArray addObject:image];
                 }];

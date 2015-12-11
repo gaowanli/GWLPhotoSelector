@@ -37,7 +37,7 @@
 
 - (void)setupImagePickerController {
     __weak typeof (self) selfVc = self;
-    if (GWLPhotoSelector_Above_iOS8) {
+    if (kGWLPhotoSelector_Above_iOS8) {
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             if (status != PHAuthorizationStatusAuthorized) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -110,9 +110,9 @@
 
 - (void)coverImageWithCollection:(PHAssetCollection *)collection completion:(kGWLPhotoSelector_imageBlock)completion {
     PHFetchResult *assetResult = [PHAsset fetchAssetsInAssetCollection:collection options:nil];
-    [assetResult enumerateObjectsUsingBlock:^(PHAsset *asset, NSUInteger idx, BOOL *stop) {
+    [assetResult enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(PHAsset *asset, NSUInteger idx, BOOL *stop) {
         if (asset.mediaType == PHAssetMediaTypeImage) {
-            CGSize targetSize = CGSizeMake(GWLPhotoSelector_Cell_Height, GWLPhotoSelector_Cell_Height);
+            CGSize targetSize = CGSizeMake(kGWLPhotoSelector_Cell_Height, kGWLPhotoSelector_Cell_Height);
             [self imageWithAsset:asset targetSize:targetSize completion:^(UIImage *image) {
                 completion(image);
                 *stop = YES;

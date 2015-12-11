@@ -122,7 +122,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return GWLPhotoSelector_Cell_Height;
+    return kGWLPhotoSelector_Cell_Height;
 }
 
 #pragma mark - UITableViewDelegate
@@ -167,7 +167,7 @@
         [self.view addSubview:errorMessageView];
         
         UILabel *msgLabel = [[UILabel alloc]init];
-        msgLabel.text = GWLPhotoSelector_ErrorMessageText;
+        msgLabel.text = kGWLPhotoSelector_ErrorMessageText;
         msgLabel.backgroundColor = [UIColor clearColor];
         msgLabel.font = [UIFont systemFontOfSize:15];
         msgLabel.textAlignment = NSTextAlignmentCenter;
